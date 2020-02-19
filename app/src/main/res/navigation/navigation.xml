@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_title" >
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
-            app:destination="@id/gameFragment2" />
+            app:destination="@id/gameFragment" />
         <action
             android:id="@+id/action_titleFragment_to_rulesFragment"
             app:destination="@id/rulesFragment"
@@ -22,18 +22,18 @@
             app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
-        android:id="@+id/gameFragment2"
+        android:id="@+id/gameFragment"
         android:name="com.example.android.navigation.GameFragment"
         android:label="GameFragment" >
         <action
             android:id="@+id/action_gameFragment_to_gameOverFragment"
             app:destination="@id/gameOverFragment2"
-            app:popUpTo="@+id/gameFragment2"
+            app:popUpTo="@+id/gameFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_gameFragment2_to_gameWonFragment"
             app:destination="@id/gameWonFragment"
-            app:popUpTo="@+id/gameFragment2"
+            app:popUpTo="@+id/gameFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -43,7 +43,7 @@
         tools:layout="@layout/fragment_game_over" >
         <action
             android:id="@+id/action_gameOverFragment2_to_gameFragment2"
-            app:destination="@id/gameFragment2"
+            app:destination="@id/gameFragment"
             app:popUpTo="@+id/titleFragment" />
     </fragment>
     <fragment
@@ -53,8 +53,14 @@
         tools:layout="@layout/fragment_game_won" >
         <action
             android:id="@+id/action_gameWonFragment_to_gameFragment2"
-            app:destination="@id/gameFragment2"
+            app:destination="@id/gameFragment"
             app:popUpTo="@+id/titleFragment" />
+        <argument
+            android:name="numQuestions"
+            app:argType="integer" />
+        <argument
+            android:name="numCorrect"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -63,7 +69,7 @@
         tools:layout="@layout/fragment_about" >
         <action
             android:id="@+id/action_aboutFragment_to_gameFragment2"
-            app:destination="@id/gameFragment2"
+            app:destination="@id/gameFragment"
             app:popUpTo="@+id/aboutFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -74,7 +80,7 @@
         tools:layout="@layout/fragment_rules" >
         <action
             android:id="@+id/action_rulesFragment_to_gameFragment2"
-            app:destination="@id/gameFragment2"
+            app:destination="@id/gameFragment"
             app:popUpTo="@+id/rulesFragment"
             app:popUpToInclusive="true" />
     </fragment>
